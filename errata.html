@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>정오표 | 마테호른 북스</title>
+<meta name="description" content="중고등학생 과학 참고서 출판사 마테호른 북스. 새 책 소식, 정오표, 질의응답.">
+<meta name="theme-color" content="#f6f4ef">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta property="og:title" content="마테호른 북스">
+<meta property="og:description" content="새 책 소식, 정오표, 질의응답">
+<meta property="og:image" content="https://www.matterhornbooks.com/assets/img/cover-physics.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&family=Black+Han+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="errata">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="site-head">
+  <div class="container">
+    <a class="wordmark" href="index.html">마테호른 북스</a>
+    <nav class="nav-links" aria-label="주 메뉴">
+      <a href="index.html#books" data-nav="books">책</a>
+      <a href="notice.html" data-nav="notice">공지</a>
+      <a href="errata.html" data-nav="errata">정오표</a>
+      <a href="qna.html" data-nav="qna">질의응답</a>
+      <a class="btn btn--primary" href="qna.html#ask">질문하기</a>
+    </nav>
+    <a class="head-action btn btn--secondary btn--small" href="qna.html#ask">질문하기</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head"><div class="container">
+    <h1>정오표</h1>
+    <p class="lead">확인된 오류를 책과 쪽 순서로 올립니다. 책 뒤표지 안쪽의 인쇄 차수(쇄)를 같이 보세요.</p>
+  </div></section>
+  <section class="section" style="padding-top:0"><div class="container">
+    <div class="toolbar">
+      <div class="field"><label for="errata-book">책</label><select id="errata-book"><option value="">모든 책</option></select></div>
+      <div class="field"><label for="errata-search">쪽이나 낱말로 찾기</label><input type="search" id="errata-search" placeholder="예: 52"></div>
+      <div id="errata-pdf"></div>
+    </div>
+    <div id="errata-out"><p class="empty">불러오는 중</p></div>
+    <noscript><p class="empty">정오표를 보려면 자바스크립트를 켜 주세요.</p></noscript>
+    <p style="margin-top:var(--space-xl)">정오표에 없는 오류를 찾았다면 <a href="qna.html#ask">질의응답</a>에 알려 주세요.</p>
+  </div></section>
+</main>
+<footer class="site-foot">
+  <div class="container">
+    <div class="mast">마테호른 북스</div>
+    <nav aria-label="바닥 메뉴">
+      <a href="notice.html">공지</a>
+      <a href="errata.html">정오표</a>
+      <a href="qna.html">질의응답</a>
+    </nav>
+    <p><span>www.matterhornbooks.com</span><span>표지 그림 마테호른 북스</span><span>© 2026 마테호른 북스</span></p>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="아래 메뉴">
+  <ul>
+    <li><a href="index.html" data-nav="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8M5 9.5V21h5v-6h4v6h5V9.5"/></svg><span>홈</span></a></li>
+    <li><a href="notice.html" data-nav="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3l9-5v16l-9-5H4zM7 15l1.5 5H11l-1.3-5"/></svg><span>공지</span></a></li>
+    <li><a href="errata.html" data-nav="errata"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7M9 8h3"/></svg><span>정오표</span></a></li>
+    <li><a href="qna.html" data-nav="qna"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H10l-5 4v-4H4zM9.5 8.5a2.5 2.5 0 1 1 3 2.4V12M12 14.2v.3"/></svg><span>질문</span></a></li>
+  </ul>
+</nav>
+
+<script src="assets/config.js"></script>
+<script src="assets/sample-data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

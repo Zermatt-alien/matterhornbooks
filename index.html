@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>마테호른 북스</title>
+<meta name="description" content="중고등학생 과학 참고서 출판사 마테호른 북스. 새 책 소식, 정오표, 질의응답.">
+<meta name="theme-color" content="#f6f4ef">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta property="og:title" content="마테호른 북스">
+<meta property="og:description" content="새 책 소식, 정오표, 질의응답">
+<meta property="og:image" content="https://www.matterhornbooks.com/assets/img/cover-physics.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&family=Black+Han+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="home">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="site-head">
+  <div class="container">
+    <a class="wordmark" href="index.html">마테호른 북스</a>
+    <nav class="nav-links" aria-label="주 메뉴">
+      <a href="index.html#books" data-nav="books">책</a>
+      <a href="notice.html" data-nav="notice">공지</a>
+      <a href="errata.html" data-nav="errata">정오표</a>
+      <a href="qna.html" data-nav="qna">질의응답</a>
+      <a class="btn btn--primary" href="qna.html#ask">질문하기</a>
+    </nav>
+    <a class="head-action btn btn--secondary btn--small" href="qna.html#ask">질문하기</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-copy">
+        <span><span class="tag">새 책</span></span>
+        <h1 id="hero-title">통합과학 기출, 물리학 편</h1>
+        <p class="lead">2028학년도 수능 대비. 단원별 기출을 한 권에 모았습니다.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="errata.html?book=phys">정오표 보기</a>
+          <a class="btn btn--secondary" href="qna.html?book=phys#ask">질문하기</a>
+        </div>
+        <div class="hero-facts">
+          <div><b>310</b><small>기출 문항</small></div>
+          <div><b>2016~2026</b><small>학력평가</small></div>
+          <div><b>2021~2027</b><small>모의평가와 수능</small></div>
+        </div>
+      </div>
+      <figure class="cover">
+        <div data-slot="cover" data-alt="통합과학 기출문제집 물리학 표지">
+          <img src="assets/img/cover-physics.jpg" alt="통합과학 기출문제집 물리학 표지. 물레방아 옆 돌다리에서 공을 던지는 학생 뒤로 마테호른이 보인다." width="900" height="1279">
+        </div>
+        <figcaption>통합과학 기출문제집 물리학</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="notice-title">
+    <div class="container">
+      <div class="opens">
+        <h2 id="notice-title">공지</h2>
+        <a class="more" href="notice.html">공지 전체 보기</a>
+      </div>
+      <ul class="rows" id="home-notices"><li class="empty">불러오는 중</li></ul>
+      <noscript><p class="empty">공지를 보려면 자바스크립트를 켜 주세요.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section" id="books" aria-labelledby="books-title">
+    <div class="container">
+      <div class="opens">
+        <h2 id="books-title">책</h2>
+        <p>책마다 정오표와 질문 게시판이 이어져 있습니다.</p>
+      </div>
+      <ul class="books" id="home-books"></ul>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="qna-title">
+    <div class="container">
+      <div class="opens">
+        <h2 id="qna-title">막히는 문제는 물어보세요</h2>
+        <p>풀이가 궁금하거나 오류 같은 곳을 찾으면 남겨 주세요. 비밀글도 됩니다.</p>
+      </div>
+      <ul class="rows" id="home-questions"></ul>
+      <a class="btn btn--on-ink" href="qna.html#ask">질문 남기기</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="container">
+    <div class="mast">마테호른 북스</div>
+    <nav aria-label="바닥 메뉴">
+      <a href="notice.html">공지</a>
+      <a href="errata.html">정오표</a>
+      <a href="qna.html">질의응답</a>
+    </nav>
+    <p><span>www.matterhornbooks.com</span><span>표지 그림 마테호른 북스</span><span>© 2026 마테호른 북스</span></p>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="아래 메뉴">
+  <ul>
+    <li><a href="index.html" data-nav="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8M5 9.5V21h5v-6h4v6h5V9.5"/></svg><span>홈</span></a></li>
+    <li><a href="notice.html" data-nav="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3l9-5v16l-9-5H4zM7 15l1.5 5H11l-1.3-5"/></svg><span>공지</span></a></li>
+    <li><a href="errata.html" data-nav="errata"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7M9 8h3"/></svg><span>정오표</span></a></li>
+    <li><a href="qna.html" data-nav="qna"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H10l-5 4v-4H4zM9.5 8.5a2.5 2.5 0 1 1 3 2.4V12M12 14.2v.3"/></svg><span>질문</span></a></li>
+  </ul>
+</nav>
+
+<script src="assets/config.js"></script>
+<script src="assets/sample-data.js"></script>
+<script src="assets/app.js"></script>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+</body>
+</html>
