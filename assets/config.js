@@ -1,6 +1,2 @@
-// 마테호른 북스 홈페이지 설정
-// 구글 시트의 Apps Script를 '웹 앱'으로 배포한 뒤 받은 주소(…/exec)를 아래 따옴표 안에 붙여 넣으세요.
-// 비워 두면 예시 데이터로 보여 주는 미리보기 모드로 동작합니다.
-window.MB_CONFIG = {
-  API_URL: ""
-};
+// 마테호른 북스 홈페이지 설정. API_URL = 구글 시트 Apps Script 웹 앱 주소(…/exec). 비우면 예시 데이터로 보이는 미리보기 모드.
+window.MB_CONFIG = { API_URL: "https://script.google.com/macros/s/AKfycbw8z3Rd2VDyuF_nXZ3PgwjNV5WtiVwnwLwrCGpj64qyJNulpI1V5xoKyd3o40hn8GqJaw/exec" };
