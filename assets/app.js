@@ -2,6 +2,7 @@
 (function () {
   "use strict";
   var API = (window.MB_CONFIG && window.MB_CONFIG.API_URL || "").trim();
+  var STORE = (window.MB_CONFIG && window.MB_CONFIG.STORE_URL || "").trim();
   var DEMO = !API;
   var DEMO_KEY = "mb_demo_questions";
 
@@ -173,7 +174,7 @@
           (bk.target ? "<p>" + esc(bk.target) + "</p>" : "") +
           '<span class="links"><a href="errata.html?book=' + encodeURIComponent(bk.id) + '">정오표' + (errCount ? " " + errCount + "건" : "") + "</a>" +
           '<a href="qna.html?book=' + encodeURIComponent(bk.id) + '#ask">질문하기</a>' +
-          (bk.buy ? '<a href="' + esc(bk.buy) + '" rel="noopener" target="_blank">구매처</a>' : "") + "</span></li>";
+          ((bk.buy || STORE) ? '<a href="' + esc(bk.buy || STORE) + '" rel="noopener" target="_blank">스마트스토어에서 구매</a>' : "") + "</span></li>";
       }).join("");
       var qs = data.questions.slice(0, 4);
       q.innerHTML = qs.length ? qs.map(function (x) { return questionRow(x, data, false); }).join("") : '<li class="empty">아직 질문이 없습니다.</li>';
