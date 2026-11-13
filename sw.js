@@ -1,6 +1,6 @@
 // 마테호른 북스 서비스 워커: 화면 파일은 저장해 두고, 데이터(구글 시트)는 항상 새로 받습니다.
 // 화면 파일을 고치면 아래 버전 숫자를 하나 올려 주세요.
-const VERSION = "mb-v1";
+const VERSION = "mb-v2";
 const SHELL = [
   "index.html", "notice.html", "errata.html", "qna.html",
   "assets/site.css", "assets/tokens.css", "assets/base.css",
