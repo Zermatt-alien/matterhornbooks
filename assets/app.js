@@ -23,6 +23,19 @@
   }
 
   var cache = null;
+  // config.js의 SHOW_BOOKS(보일 책 아이디)·HIDE_NOTICES(숨길 공지 번호)에 따라 걸러 냄. 비우면 시트 그대로.
+  function onlyShown(d) {
+    var cfg = window.MB_CONFIG || {}, show = cfg.SHOW_BOOKS || [], hide = cfg.HIDE_NOTICES || [];
+    if (show.length) {
+      var ok = function (id) { return show.indexOf(id) >= 0; };
+      d.books = d.books.filter(function (b) { return ok(b.id); });
+      d.errata = d.errata.filter(function (e) { return ok(e.book); });
+      d.questions = d.questions.filter(function (q) { return ok(q.book); });
+    }
+    if (hide.length) d.notices = d.notices.filter(function (n) { return hide.indexOf(n.id) < 0; });
+    return d;
+  }
+
   function load() {
     if (cache) return cache;
     if (DEMO) {
@@ -39,6 +52,7 @@
         .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
         .then(function (j) { if (!j.ok) throw new Error(j.error || "불러오기 실패"); return j.data; });
     }
+    cache = cache.then(onlyShown);
     return cache;
   }
 
