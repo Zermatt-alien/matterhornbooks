@@ -190,9 +190,11 @@
           '<a href="qna.html?book=' + encodeURIComponent(bk.id) + '#ask">질문하기</a>' +
           ((bk.buy || STORE) ? '<a href="' + esc(bk.buy || STORE) + '" rel="noopener" target="_blank">스마트스토어에서 구매</a>' : "") + "</span></li>";
       }).join("");
-      var qs = data.questions.slice(0, 4);
-      q.innerHTML = qs.length ? qs.map(function (x) { return questionRow(x, data, false); }).join("") : '<li class="empty">아직 질문이 없습니다.</li>';
-    }).catch(function (e) { failBox(n, e); b.innerHTML = ""; q.innerHTML = ""; });
+      if (q) {
+        var qs = data.questions.slice(0, 4);
+        q.innerHTML = qs.length ? qs.map(function (x) { return questionRow(x, data, false); }).join("") : '<li class="empty">아직 질문이 없습니다.</li>';
+      }
+    }).catch(function (e) { failBox(n, e); b.innerHTML = ""; if (q) q.innerHTML = ""; });
   };
 
   function sortNotices(a, b) {
