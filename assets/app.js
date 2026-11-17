@@ -25,10 +25,16 @@
   var cache = null;
   // config.js의 SHOW_BOOKS(보일 책 아이디)·HIDE_NOTICES(숨길 공지 번호)에 따라 걸러 냄. 비우면 시트 그대로.
   function onlyShown(d) {
-    var cfg = window.MB_CONFIG || {}, show = cfg.SHOW_BOOKS || [], hide = cfg.HIDE_NOTICES || [];
+    var cfg = window.MB_CONFIG || {}, show = cfg.SHOW_BOOKS || [], hide = cfg.HIDE_NOTICES || [], info = cfg.BOOK_INFO || {};
+    Object.keys(info).forEach(function (id) {
+      var b = d.books.filter(function (x) { return x.id === id; })[0];
+      if (!b) { b = { id: id, series: "", title: "", target: "", intro: "", cover: "", buy: "", errataPdf: "", isNew: false }; d.books.push(b); }
+      Object.keys(info[id]).forEach(function (k) { if (!b[k]) b[k] = info[id][k]; });
+    });
     if (show.length) {
       var ok = function (id) { return show.indexOf(id) >= 0; };
-      d.books = d.books.filter(function (b) { return ok(b.id); });
+      d.books = d.books.filter(function (b) { return ok(b.id); })
+        .sort(function (a, b) { return show.indexOf(a.id) - show.indexOf(b.id); });
       d.errata = d.errata.filter(function (e) { return ok(e.book); });
       d.questions = d.questions.filter(function (q) { return ok(q.book); });
     }
@@ -183,6 +189,7 @@
       b.innerHTML = data.books.map(function (bk) {
         var errCount = data.errata.filter(function (e) { return e.book === bk.id; }).length;
         return '<li class="book">' +
+          (bk.cover ? '<img class="book-cover" src="' + esc(bk.cover) + '" alt="' + esc(bk.series + " " + bk.title) + ' 표지" width="906" height="1288" loading="lazy">' : "") +
           '<span class="series">' + esc(bk.series) + "</span>" +
           "<h3>" + esc(bk.title) + (bk.isNew ? ' <span class="tag">새 책</span>' : "") + "</h3>" +
           (bk.target ? "<p>" + esc(bk.target) + "</p>" : "") +
